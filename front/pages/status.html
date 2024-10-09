@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Conexão com a API</title>
+    <title>{{ title }}</title>
     <link rel="shortcut icon" href="../static/resources/images/icones/logo.png">
     <style>
         body {
@@ -20,7 +20,9 @@
             background-size: cover;
             animation: gradientAnimation 10s ease infinite;
         }
-
+      .greyscale {
+            filter: grayscale(100%);
+        }
         @keyframes gradientAnimation {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -94,10 +96,10 @@
 </head>
 <body>
 <div class="mae">
-    <div class="img"></div>
+    <div class="img greyscale"></div>
     <h1>Teste de conexão com a API</h1>
     <div id="status">Tentando conectar à API...</div>
-
+    <a href="/dashboard">Dashboard</a>
 
 </div>
 <script src="../static/js/app.js"></script>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Bit</title>
+    <title>{{ title }}</title>
     <link rel="stylesheet" href="../static/css/login.css">
     <link rel="shortcut icon" type="image/png" href="../static/resources/images/elementos_graficos/sirkass.png">
 </head>
@@ -19,7 +19,7 @@
                         <img src="../static/resources/images/icones/logo.png   " alt="Logo do BitTales"> <!-- Substitua "logo.png" pelo caminho correto da sua imagem -->
                         <h1>BitTales</h1>
                         <h2>login</h2>
-                        <form action="#" method="post">
+                        <form action="/login" method="post">
                             <div class="form-group">
                                 <input type="email" id="email" name="email" placeholder="Email" required>
                             
@@ -43,7 +43,7 @@
                         <p>
                             Caso não tenha, faça o
                         </p>
-                        <a href="cadastro.html">Cadastro</a>
+                        <a href="/cadastro">Cadastro</a>
                         <img src="../static/resources/images/ziggy/livro.png">
                     </div>
                 </div>
