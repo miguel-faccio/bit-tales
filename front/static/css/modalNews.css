@@ -1,0 +1,209 @@
+
+.carousel {
+    position: relative;
+    width: 80%;
+    max-width: 300px; /* Ajuste conforme necessário */
+    margin: 0; /* Remove a margem para centralização vertical */
+    overflow: hidden;
+}
+
+.carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    height: 400px; /* Altura dos cards, ajuste conforme necessário */
+    border-radius: 20px; /* Bordas arredondadas */
+    transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+    background-color: #fff; /* Fundo branco para melhor visualização das bordas */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px; /* Bordas arredondadas na imagem */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.card-content {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px; /* Tamanho da fonte ajustado para o tamanho menor dos cards */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item:not(.active) {
+    opacity: 0.3;
+    filter: blur(5px);
+}
+
+
+
+
+
+
+.open-modal-btn {
+    background-color: #f04e23;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.open-modal-btn:hover {
+    background-color: #c43e1c;
+    transform: scale(1.05);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.68);
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 900px; /* Aumentei a largura do modal para acomodar o aside */
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-out;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Espaçamento entre o conteúdo principal e o aside */
+}
+.modal-content div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #f04e23;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.modal-header img {
+    width: auto;
+    height: 300px;
+    object-fit: cover;
+}
+
+.modal-body {
+    margin-top: 15px;
+}
+
+.modal-body img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-footer {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-footer div {
+    background-color: #f04e23;
+    padding: 12px 24px;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos do aside dentro do modal */
+aside {
+    width: 250px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+aside h3 {
+    text-align: center;
+    color: #f04e23;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin-bottom: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+aside ul li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .modal-content {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    aside {
+        width: 100%;
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de Jogos</title>
+    <link rel="stylesheet" href="../static/css/menu.css">
+    <link rel="stylesheet" href="../static/css/button.css">
+    <!-- CSS separado -->
+    <link rel="stylesheet" href="../static/css/modalNews.css">
+    <link rel="shortcut icon" type="image/png" href="../static/resources/images/elementos_graficos/sirkass.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body >
+<div class="desk">
+<nav class="navbar">
+    <ul class="nav-list">
+        <img src="../static/resources/images/icones/logo.png" alt="Logo BitTales">
+        <li><a class="logo" href="menu.html">BitTales</a></li>
+        <li><a href="Index.html">Logout</a></li>
+        <li>
+            <a href="#" id="music-toggle" onclick="toggleMusic()">
+                <i class="fas fa-volume-up" id="music-icon"></i>
+            </a>
+        </li>
+
+    </ul>
+    <ul class="nav-list icon-list">
+        <li></li>
+        <button id="theme-toggle">
+            <i class=" theme fas fa-sun" id="theme-icon"></i>
+        </button> <!-- Botão na navbar -->
+        </li>
+        <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+        <li><a id="openModalBtn"><i class="fas fa-newspaper" ></i>News</a></li>
+        <li><a href="#"><i class="fas fa-comments"></i>FeedBack</a></li>
+        <li><a href="#"><i class="fas fa-user"></i>Perfil</a></li>
+    </ul>
+</nav>
+
+<section class="container">
+
+    <div class="component"><!--meu carrosel-->
+
+        <div class="slide">
+            <div class="book xadrezB">
+                <a class="xadrezbut">
+                    <div class="box">J</div>
+                    <div class="box">O</div>
+                    <div class="box">G</div>
+                    <div class="box">A</div>
+                    <div class="box">R</div>
+                </a>
+                <div class="cover xadrez">
+
+                </div>
+            </div>
+            <div class="book vampB">
+
+                <div class="cover vamp">
+
+                </div>
+                <a class="vampire"><span>Jogar</span></a>
+            </div>
+            <div class="book velhaB">
+                <button class="button">Jogar</button>
+                <div class="cover velha">
+
+                </div>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="book amorB">
+                <a class="amorbut" style="--i:rgba(255,85,227,0.61);--j:rgba(255,162,240,0.62);">
+            <span class="icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path>
+</svg>
+            </span>
+                    <span class="title">Jogar</span>
+                </a>
+                <div class="cover amor">
+
+                </div>
+            </div>
+            <div class="book spaceB">
+                <a class="ui-btn">
+                    <span>Jogar</span>
+                </a>
+                <div class="cover space">
+
+                </div>
+            </div>
+            <div class="book sudokuB">
+                <button class="button">Jogar</button>
+                <div class="cover sudoku">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="book dogrunB">
+                <a class="bone-image-button" href="jogos/dogRun/dog.html">Jogar</a>
+                <div class="cover dogrun">
+                </div>
+            </div>
+            <div class="book tetrisB">
+                <a class="button" >Jogar</a>
+                <div class="cover tetris">
+
+                </div>
+            </div>
+            <div class="book pirateB">
+                <button class="button">Jogar</button>
+                <div class="cover pirate">
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="slide">
+            <div class="book pingB">
+                <button class="button">Jogar</button>
+                <div class="cover ping">
+
+                </div>
+            </div>
+            <div class="book macaB">
+                <button class="button">Jogar</button>
+                <div class="cover maca">
+
+                </div>
+            </div>
+            <div class="book tesouroB">
+                <button class="button">Jogar</button>
+                <div class="cover tesouro">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+</section>
+
+<audio id="background-music" loop>
+    <source src="../static/resources/Audios/main.mp3" type="audio/mpeg">
+    Seu navegador não suporta o elemento audio.
+</audio>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div>
+            <span class="close" id="closeModalBtn">&times;</span>
+
+            <div class="modal-body">
+                <img src="" alt="Imagem do Corpo">
+            </div>
+            <div class="modal-header">
+                <img src="../static/resources/images/ziggy/deitado.png" alt="Imagem de Cabeçalho">
+
+            </div>
+        </div>
+
+        <!-- Seção lateral de notícias dentro do modal -->
+        <aside>
+            <h3>Últimas Notícias</h3>
+            <ul>
+                <li>Notícia 1: Atualização de sistema disponível.</li>
+                <li>Notícia 2: Novo recurso de integração lançado.</li>
+                <li>Notícia 3: Manutenção programada para amanhã.</li>
+                <li>Notícia 4: Melhorias de desempenho implementadas.</li>
+                <li>Notícia 5: Melhorias de desempenho implementadas.</li>
+            </ul>
+        </aside>
+    </div>
+</div>
+</div>
+<div class="container-alerta">
+    <div class="container-alerta-content">
+        <img src="../static/resources/images/ziggy/cutie.png" alt="App logo">
+        <div>
+            <h1>Atenção</h1>
+            <p>Nosso site não possui suporte para mobile, por favor baixe nosso aplicativo!</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    var audio = document.getElementById("background-music");
+    var musicIcon = document.getElementById("music-icon");
+
+    document.getElementById("theme-toggle").addEventListener("click", function() {
+        const isDark = document.body.classList.toggle("dark");
+        document.querySelector('.navbar').classList.toggle("dark");
+        document.querySelector('.cover').classList.toggle("dark");
+
+        const themeIcon = document.getElementById("theme-icon");
+        if (isDark) {
+            themeIcon.classList.remove("fa-sun");
+            themeIcon.classList.add("fa-moon"); // Ícone da lua
+        } else {
+            themeIcon.classList.remove("fa-moon");
+            themeIcon.classList.add("fa-sun"); // Ícone do sol
+        }
+        // Trocar a música
+        if (isDark) {
+            audio.src = "../resources/Audios/nightmain.mp3"; // Música para o tema escuro
+        } else {
+            audio.src = "../resources/Audios/main.mp3"; // Música para o tema claro
+        }
+
+        // Reiniciar a música
+        audio.currentTime = 0; // Volta ao início
+        audio.play(); // Toca a nova música
+    });
+
+    // Função para controlar a música
+    function toggleMusic() {
+        if (audio.paused) {
+            audio.play();
+            musicIcon.classList.remove("fa-volume-mute");
+            musicIcon.classList.add("fa-volume-up");
+        } else {
+            audio.pause();
+            musicIcon.classList.remove("fa-volume-up");
+            musicIcon.classList.add("fa-volume-mute");
+        }
+    }
+
+    // Tocar a música automaticamente ao carregar a página
+    window.onload = function() {
+        audio.play();
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById("myModal");
+        const openModalBtn = document.getElementById("openModalBtn");
+        const closeModalBtn = document.getElementById("closeModalBtn");
+
+        function toggleModal(display) {
+            modal.style.display = display;
+            if (display === "block") {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+
+        openModalBtn.addEventListener('click', () => toggleModal("block"));
+        closeModalBtn.addEventListener('click', () => toggleModal("none"));
+
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                toggleModal("none");
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                toggleModal("none");
+            }
+        });
+    });
+</script>
+<script src="../static/js/livro.js"></script>
+</body>
+
+</html>

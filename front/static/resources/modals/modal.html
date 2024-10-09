@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Exemplo com Notícias</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <button class="open-modal-btn" id="openModalBtn">Abrir Modal</button>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div>
+                <span class="close" id="closeModalBtn">&times;</span>
+                
+                <div class="modal-body">
+                    <img src="imagens/Cute Red Streaming Twitch Banner.jpg" alt="Imagem do Corpo">
+                </div>
+                <div class="modal-header">
+                    <img src="https://via.placeholder.com/80x40" alt="Imagem de Cabeçalho">
+                    
+                </div>
+            </div>
+
+            <!-- Seção lateral de notícias dentro do modal -->
+            <aside>
+                <h3>Últimas Notícias</h3>
+                <ul>
+                    <li>Notícia 1: Atualização de sistema disponível.</li>
+                    <li>Notícia 2: Novo recurso de integração lançado.</li>
+                    <li>Notícia 3: Manutenção programada para amanhã.</li>
+                    <li>Notícia 4: Melhorias de desempenho implementadas.</li>
+                    <li>Notícia 5: Melhorias de desempenho implementadas.</li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById("myModal");
+            const openModalBtn = document.getElementById("openModalBtn");
+            const closeModalBtn = document.getElementById("closeModalBtn");
+
+            function toggleModal(display) {
+                modal.style.display = display;
+                if (display === "block") {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
+            }
+
+            openModalBtn.addEventListener('click', () => toggleModal("block"));
+            closeModalBtn.addEventListener('click', () => toggleModal("none"));
+
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    toggleModal("none");
+                }
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    toggleModal("none");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

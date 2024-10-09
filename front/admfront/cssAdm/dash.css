@@ -1,0 +1,171 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/main.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    scroll-behavior: smooth;
+
+}
+body::-webkit-scrollbar {
+    width: 10px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: #8C3807;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #D9843B;    /* color of the scroll thumb */
+    border-radius: 5px;       /* roundness of the scroll thumb */
+    border: 2px  solid #8C3807;  /* creates padding around scroll thumb */
+
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+main {
+    flex: 1;
+    display: flex;
+
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #8C3807;
+    color: #F2F0D8;
+
+    height: 100%;
+    border-right: 2px solid #D9843B;
+    position: fixed;
+}
+
+.sidebar h1 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 15px 0;
+    border-bottom: 1px solid #D9843B;
+}
+
+.sidebar nav ul li a {
+    color: #CEF2B3;
+    text-decoration: none;
+    font-size: 1.1em;
+    display: block;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+    color: #79BF34;
+}
+
+.content {
+    margin-left: 250px;
+
+    /*padding: 20px;*/
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header h2 {
+    margin-top: 0;
+
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    background-color: #D9843B;
+    color: #F2F0D8;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.stat-box:hover {
+    background-color: #BF7A3B;
+    transform: scale(1.05);
+}
+
+.tables {
+    margin-top: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+section h3 {
+    background-color: #8C3807;
+    width: 1100px;
+    color: #F2F0D8;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+section button.btn-add {
+    background-color: #BF7A3B;
+    color: #F2F0D8;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+section button.btn-add:hover {
+    background-color: #8C3807;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #D9843B;
+}
+
+table th {
+    background-color: #BF7A3B;
+    color: #F2F0D8;
+}
+
+table tr:nth-child(even) {
+    background-color: #F5F5F5;
+}
+
+table tr:hover {
+    background-color: #D9843B;
+    color: #F2F0D8;
+}

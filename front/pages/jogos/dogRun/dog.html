@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Dino Style</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="ngc"></div>
+<nav>
+  <button>Start Game</button>
+  <button>Pause</button>
+</nav>
+
+<div id="gameArea">
+
+  <div id="character"></div>
+  <div id="obstacleSmall"></div>
+</div>
+
+<div id="score">Score: 0</div>
+
+<!-- Game Over Modal -->
+<div class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>Game Over!</h2>
+    <p>Your score: <span id="finalScore"></span></p>
+    <button id="restartGameButton" onclick="restartGame()">Restart Game</button>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
