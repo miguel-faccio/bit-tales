@@ -1,0 +1,146 @@
+/* Estilização da barra de navegação */
+@font-face {
+    font-family: 'fairy';
+    src: url('../resources/fontes/fairydustb/FairyDustB.ttf');
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(45deg, #8c3807f1, #ee8e56ee, #8c3807f1);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: fixed; /* Muda para fixed */
+    top: 0; /* Fixa no topo da página */
+    width: 100%; /* Mantém o 95% */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Logo e Nome do Site */
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px; /* Espaçamento entre a imagem e o nome do site */
+}
+
+.navbar .logo a {
+    font-size: 28px;
+    font-family: fairy;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease;
+}
+
+.navbar .logo a:hover {
+    color: #f39c12; /* Cor de hover do nome do site */
+}
+
+/* Menu de Navegação */
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.navbar .nav-links li {
+    margin: 0 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav-links a i {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+/* Hover Efeito */
+.navbar .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #f39c12;
+
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #f39c12;
+}
+
+.navbar .nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Ícones da barra lateral */
+.icon-list {
+    list-style-type: none;
+    display: flex;
+}
+
+.icon-list li {
+    margin: 0 10px;
+}
+
+.icon-list a, .icon-list button {
+    color: #fff;
+    font-size: 17px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.icon-list a:hover, .icon-list button:hover {
+    color: #f39c12;
+}
+
+/* Botão de Logout */
+.logout-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.logout-button i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.logout-button:hover {
+    color: #f39c12;
+}

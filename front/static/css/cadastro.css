@@ -40,7 +40,7 @@ body {
     box-shadow: rgba(0,0,0,0.5) 0 1em 3em;
     color: #000;
     padding: 2.5em;
-    height: 44em;
+    height: 42em;
 }
 .open-book * {
     position: relative;
@@ -162,6 +162,10 @@ button{
 .cadastro-container p{
     margin-top: 20px;
     font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    right: 30px;
 }
 .form-group {
     margin-top: 20px;
@@ -189,6 +193,7 @@ button{
     background-color: #f3e1c6;
     border: none;
     border-radius: 10px;
+    border-bottom: 3px solid #8b4513;
     font-size: 18px;
     color: #4d3a25;
     cursor: pointer;

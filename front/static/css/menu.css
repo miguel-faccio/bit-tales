@@ -15,6 +15,8 @@ body {
 div.desk{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
     align-items: center;
     height: 100vh;
 }
@@ -42,114 +44,6 @@ div.desk{
     margin: 10px ;
 }
 
-/* Estilização da barra de navegação */
-.navbar {
-
-    background: linear-gradient(45deg, #8c3807f1, #ee8e56ee, #8c3807f1);
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px; /* Espaçamento interno */
-    position: fixed; /* Fixar a barra de navegação no topo da página */
-    width: 100%; /* Ocupa toda a largura da página */
-    top: 0; /* Posiciona no topo da página */
-    height: 30px;
-    z-index: 1000; /* Garante que a barra de navegação fique sobre outros elementos */
-    display: flex; /* Usa flexbox para layout */
-    justify-content: space-between; /* Espaça os itens para que fiquem nos extremos */
-    align-items: center; /* Alinha verticalmente */
-    margin-bottom: 30px;
-
-}
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 0%;
-    }
-    50% {
-        background-position: 100% 100%;
-    }
-    100% {
-        background-position: 0% 0%;
-    }
-}
-
-/* Estilização da lista de links de navegação */
-.nav-list {
-    list-style-type: none; /* Remove os marcadores dos itens da lista */
-    margin: 0; /* Remove a margem padrão */
-    padding: 0; /* Remove o preenchimento padrão */
-    display: flex; /* Alinha os itens horizontalmente */
-    align-items: center; /* Alinha verticalmente */
-}
-
-.nav-list li {
-    margin: 0 15px; /* Espaçamento entre os itens */
-}
-
-.nav-list a, .nav-list .a {
-    display: flex; /* Usa flexbox para centralizar o conteúdo */
-    align-items: center; /* Alinha verticalmente o conteúdo */
-}
-
-.nav-list img {
-    max-height: 50px; /* Ajuste o tamanho da imagem */
-}
-nav a, .a{
-    text-decoration: none;
-    color: #fff;
-    background: none!important;
-
-}
-nav a.logo{
-    font-size: 30px;
-    font-family: fairy;
-}
-nav img{
-    width: 50px;
-    height: 50px;
-}
-/* Estilização dos ícones */
-.icon-list {
-    list-style-type: none; /* Remove os marcadores dos itens da lista */
-    margin: 0; /* Remove a margem padrão */
-    padding: 0; /* Remove o preenchimento padrão */
-    display: flex; /* Alinha os ícones horizontalmente */
-    margin-left: 30px; /* Move a lista de ícones para o lado direito */
-}
-
-.icon-list li {
-    margin: 0 10px; /* Espaçamento entre os ícones */
-}
-
-/* Estilo dos links na lista de ícones */
-/* Estilo dos links na lista de ícones */
-.icon-list a, .nav-list a {
-    color: #fff !important; /* Cor do texto */
-    margin: 5px !important;
-    font-size: 17px !important; /* Tamanho do texto */
-    transition: color 0.3s ease !important; /* Transição suave para a cor */
-    text-decoration: none !important; /* Remove o sublinhado */
-}
-
-/* Estilo do botão de logout */
-.logout-button {
-    background: none !important; /* Remove qualquer fundo */
-    border: none !important; /* Remove qualquer borda */
-    cursor: pointer !important; /* Muda o cursor para pointer */
-    display: inline !important; /* Garante que se comporte como um link */
-    padding: 0 !important; /* Remove qualquer padding */
-}
-
-/* Estilo de hover para todos os links, incluindo o logout */
-.icon-list a:hover, .nav-list a:hover, .logout-button:hover {
-    color: #f39c12 !important; /* Cor ao passar o mouse sobre o link */
-}
-
-/* Remove o estilo padrão de foco */
-.logout-button:focus {
-    outline: none !important; /* Remove o contorno ao focar */
-}
-
 
 /*////// Main ////*/
 
@@ -159,154 +53,7 @@ nav img{
     transition: transform 0.5s ease;
 
 }
-/*/////// Livro ////////*/
 
-.book {
-    position: relative;
-    border-radius: 3px;
-    width: 266px;
-    height: 420px;
-    background-color: whitesmoke;
-    background-size: cover;
-    background-position: center;
-    background-position-x: 40%;
-    -webkit-transform: preserve-3d;
-    -ms-transform: preserve-3d;
-    transform: preserve-3d;
-    -webkit-perspective: 2000px;
-    perspective: 2000px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    color: #000;
-    margin: 20px;
-    transition: 400ms;
-    cursor: pointer;
-    box-shadow:  6px 10px 16px rgba(41, 40, 40, 0.75);
-    border-left: solid 8px #6a4d26;
-}
-
-.cover {
-    top: 0;
-    position: absolute;
-    background-color: #fff;
-    background-size: cover;
-    background-position: center;
-    background-position-x: 30%;
-    width: 100%;
-    height: 100%;
-    border-radius: 3px;
-    cursor: pointer;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-    -webkit-transform-origin: 0;
-    -ms-transform-origin: 0;
-    transform-origin: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-
-.book:hover .cover {
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-    -webkit-transform: rotatey(-84deg);
-    -ms-transform: rotatey(-84deg);
-    transform: rotatey(-84deg);
-}
-
-p {
-    font-size: 20px;
-    font-weight: bolder;
-}
-.xadrezB{
-    background-image: url(../resources/images/floresta/temas_recompensa/xadtema.jpg);
-}
-.xadrez{
-    background-image: url(../resources/images/capas_jogos/capa_xadrez.jpg);
-}
-.velhaB{
-    background-image: url('../resources/images/floresta/temas_recompensa/velhafloresta.jfif');
-}
-.velha{
-    background-image: url('../resources/images/capas_jogos/capa_velha.jpg');
-}
-.amorB{
-    background-image: url('../resources/images/floresta/temas_recompensa/amor.jfif');
-}
-.amor {
-    background-image: url('../resources/images/capas_jogos/test_love.jpg');
-}
-.spaceB {
-    background-image: url('../resources/images/floresta/interior_nut.jpg');
-}
-.space{
-    background-image: url('../resources/images/capas_jogos/capanut.jpg');
-}
-.sudoku{
-    background-image: url('../resources/images/capas_jogos/2.jpg');
-}
-.sudokuB{
-    background-image: url('../resources/images/floresta/fundosudoku.jpg');
-}
-.dogrunB{
-    background-image: url('../resources/images/floresta/floresta_dog.jpg');
-}
-.dogrun {
-    background-image: url('../resources/images/capas_jogos/capa_dog.jpg');
-}
-
-.vampB{
-    background-image: url('../resources/images/floresta/DALL·E 2024-09-27 10.36.43 - A dark, gothic forest at night with towering trees and thick mist. In the background, there is a large, glowing full moon illuminating the eerie scene.webp    ');
-}
-.vamp{
-    background-image: url('../resources/images/capas_jogos/capa_vlad.jpg');
-}
-.tetrisB{
-    background-image: url('../resources/images/floresta/floresta tetris.jpg');
-}
-.tetris{
-    background-image: url('../resources/images/capas_jogos/capa_tetris.jpg');
-}
-.macaB{
-    background-image: url('../resources/images/floresta/floresta_maca.jpg');
-}
-.maca{
-    background-image: url('../resources/images/capas_jogos/capa_maca.jpg');
-    background-position: center;
-    background-size: contain!important;
-
-}
-.tesouroB{
-    background-image: url('../resources/images/floresta/tesouro.jpg');
-}
-.tesouro{
-    background-image: url('../resources/images/capas_jogos/capa_Caca.jpg');
-}
-.pingB{
-    background-image: url('../resources/images/floresta/floresta_pong.jpg');
-}
-.ping {
-    background-image: url('../resources/images/capas_jogos/capa_ping.jpg');
-}
-.pirateB{
-    background-image: url('../resources/images/floresta/piratas.jpg');
-}
-.pirate{
-    background-image: url('../resources/images/capas_jogos/moedacapa.jpg');
-}
 
 
 /*///// botão ////*/
@@ -382,9 +129,7 @@ body.dark {
     background-image: url(../resources/images/floresta/darktheme.jpg);
     background-position: center;
     background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
     height: 100vh;
 }
 
@@ -392,6 +137,7 @@ body.dark {
     background: linear-gradient(45deg, rgba(45, 7, 140, 0.95), rgba(244, 238, 238, 0.93), rgba(28, 59, 116, 0.75));
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
+
 }
 @keyframes gradientAnimation {
     0% {

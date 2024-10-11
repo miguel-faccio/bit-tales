@@ -1,0 +1,149 @@
+.xadrezB{
+    background-image: url(../resources/images/floresta/temas_recompensa/xadtema.jpg);
+}
+.xadrez{
+    background-image: url(../resources/images/capas_jogos/capa_xadrez.jpg);
+}
+.velhaB{
+    background-image: url('../resources/images/floresta/temas_recompensa/velhafloresta.jfif');
+}
+.velha{
+    background-image: url('../resources/images/capas_jogos/capa_velha.jpg');
+}
+.amorB{
+    background-image: url('../resources/images/floresta/temas_recompensa/amor.jfif');
+}
+.amor {
+    background-image: url('../resources/images/capas_jogos/test_love.jpg');
+}
+.spaceB {
+    background-image: url('../resources/images/floresta/interior_nut.jpg');
+}
+.space{
+    background-image: url('../resources/images/capas_jogos/capanut.jpg');
+}
+.sudoku{
+    background-image: url('../resources/images/capas_jogos/2.jpg');
+}
+.sudokuB{
+    background-image: url('../resources/images/floresta/fundosudoku.jpg');
+}
+.dogrunB{
+    background-image: url('../resources/images/floresta/floresta_dog.jpg');
+}
+.dogrun {
+    background-image: url('../resources/images/capas_jogos/capa_dog.jpg');
+}
+
+.vampB{
+    background-image: url('../resources/images/floresta/DALL·E 2024-09-27 10.36.43 - A dark, gothic forest at night with towering trees and thick mist. In the background, there is a large, glowing full moon illuminating the eerie scene.webp    ');
+}
+.vamp{
+    background-image: url('../resources/images/capas_jogos/capa_vlad.jpg');
+}
+.tetrisB{
+    background-image: url('../resources/images/floresta/floresta tetris.jpg');
+}
+.tetris{
+    background-image: url('../resources/images/capas_jogos/capa_tetris.jpg');
+}
+.macaB{
+    background-image: url('../resources/images/floresta/floresta_maca.jpg');
+}
+.maca{
+    background-image: url('../resources/images/capas_jogos/capa_maca.jpg');
+    background-position: center;
+    background-size: contain!important;
+
+}
+.tesouroB{
+    background-image: url('../resources/images/floresta/tesouro.jpg');
+}
+.tesouro{
+    background-image: url('../resources/images/capas_jogos/capa_Caca.jpg');
+}
+.pingB{
+    background-image: url('../resources/images/floresta/floresta_pong.jpg');
+}
+.ping {
+    background-image: url('../resources/images/capas_jogos/capa_ping.jpg');
+}
+.pirateB{
+    background-image: url('../resources/images/floresta/piratas.jpg');
+}
+.pirate{
+    background-image: url('../resources/images/capas_jogos/moedacapa.jpg');
+}
+/*CSS ANIMACAO LIVRO*/
+/*/////// Livro ////////*/
+
+.book {
+    position: relative;
+    border-radius: 3px;
+    width: 266px;
+    height: 420px;
+    background-color: whitesmoke;
+    background-size: cover;
+    background-position: center;
+    background-position-x: 40%;
+    -webkit-transform: preserve-3d;
+    -ms-transform: preserve-3d;
+    transform: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #000;
+    margin: 20px;
+    transition: 400ms;
+    cursor: pointer;
+    box-shadow:  6px 10px 16px rgba(41, 40, 40, 0.75);
+    border-left: solid 8px #6a4d26;
+}
+
+.cover {
+    top: 0;
+    position: absolute;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center;
+    background-position-x: 30%;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform-origin: 0;
+    -ms-transform-origin: 0;
+    transform-origin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.book:hover .cover {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotatey(-84deg);
+    -ms-transform: rotatey(-84deg);
+    transform: rotatey(-84deg);
+}
+
+p {
+    font-size: 20px;
+    font-weight: bolder;
+}
