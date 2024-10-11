@@ -86,7 +86,7 @@ div.desk{
     margin: 0 15px; /* Espaçamento entre os itens */
 }
 
-.nav-list a {
+.nav-list a, .nav-list .a {
     display: flex; /* Usa flexbox para centralizar o conteúdo */
     align-items: center; /* Alinha verticalmente o conteúdo */
 }
@@ -94,10 +94,10 @@ div.desk{
 .nav-list img {
     max-height: 50px; /* Ajuste o tamanho da imagem */
 }
-nav a{
+nav a, .a{
     text-decoration: none;
     color: #fff;
-
+    background: none!important;
 
 }
 nav a.logo{
@@ -121,15 +121,36 @@ nav img{
     margin: 0 10px; /* Espaçamento entre os ícones */
 }
 
-.icon-list a {
-    color: #fff; /* Cor dos ícones */
-    margin: 5px;
-    font-size: 17px; /* Tamanho dos ícones */
-    transition: color 0.3s ease; /* Transição suave para a cor do ícone */
+/* Estilo dos links na lista de ícones */
+/* Estilo dos links na lista de ícones */
+.icon-list a, .nav-list a {
+    color: #fff !important; /* Cor do texto */
+    margin: 5px !important;
+    font-size: 17px !important; /* Tamanho do texto */
+    transition: color 0.3s ease !important; /* Transição suave para a cor */
+    text-decoration: none !important; /* Remove o sublinhado */
 }
-a:hover {
-    color: #f39c12; /* Cor dos ícones quando o mouse passa sobre eles */
+
+/* Estilo do botão de logout */
+.logout-button {
+    background: none !important; /* Remove qualquer fundo */
+    border: none !important; /* Remove qualquer borda */
+    cursor: pointer !important; /* Muda o cursor para pointer */
+    display: inline !important; /* Garante que se comporte como um link */
+    padding: 0 !important; /* Remove qualquer padding */
 }
+
+/* Estilo de hover para todos os links, incluindo o logout */
+.icon-list a:hover, .nav-list a:hover, .logout-button:hover {
+    color: #f39c12 !important; /* Cor ao passar o mouse sobre o link */
+}
+
+/* Remove o estilo padrão de foco */
+.logout-button:focus {
+    outline: none !important; /* Remove o contorno ao focar */
+}
+
+
 /*////// Main ////*/
 
 .component{
