@@ -1,5 +1,5 @@
 from peewee import AutoField, CharField, Model
-from config.database import database
+from back.config.database import database
 
 class CategoriaDB(Model):
     id_cartegoria = AutoField()  # Chave primária

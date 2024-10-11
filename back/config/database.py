@@ -5,20 +5,19 @@ from peewee import SqliteDatabase, MySQLDatabase
 
 database = MySQLDatabase(
     database='bit-tales',
-    user ='root',
-    password ='',
-    host ='localhost',
+    user='root',
+    password='',
+    host='localhost',
     port=3306,
-
 )
 
 def startup_db():
     database.connect()
 
-    from models.users import UsuarioDB
-    from models.game import GameDB
-    from models.categoria import CategoriaDB
-    from models.feedback import FeedbackDB
+    from back.models.users import UsuarioDB
+    from back.models.game import GameDB
+    from back.models.categoria import CategoriaDB
+    from back.models.feedback import FeedbackDB
 
     database.create_tables(
         [
@@ -26,10 +25,10 @@ def startup_db():
             GameDB,
             CategoriaDB,
             FeedbackDB,
-
-        ]
+        ],
+        safe=True,  # Para evitar erros se as tabelas já existirem
     )
 
-
 def shutdown_db():
-    database.close()
+    if not database.is_closed():
+        database.close()

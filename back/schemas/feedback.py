@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from enum import Enum
 from typing import Optional
-from schemas.users import UsuarioReadWithFeedback
+from back.schemas.users import UsuarioReadWithFeedback
 
 class RatingEnum(str, Enum):
     ZERO = '0'

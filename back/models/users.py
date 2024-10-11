@@ -1,6 +1,6 @@
 from peewee import Model, AutoField, CharField, DateTimeField, IntegerField
 from enum import IntEnum
-from config.database import database
+from back.config.database import database
 
 
 # Definindo um Enum para as categorias de usuários

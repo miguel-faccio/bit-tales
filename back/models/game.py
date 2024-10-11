@@ -1,6 +1,6 @@
 from peewee import AutoField, CharField, DateField, ForeignKeyField, Model, TextField
-from config.database import database
-from models.categoria import CategoriaDB  # Certifique-se de que o modelo CategoriaDB esteja importado
+from back.config.database import database
+from back.models.categoria import CategoriaDB  # Certifique-se de que o modelo CategoriaDB esteja importado
 
 
 class GameDB(Model):

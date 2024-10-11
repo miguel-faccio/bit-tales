@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from typing import Optional
 from datetime import date
-from schemas.categoria import CategoriaRead
+from back.schemas.categoria import CategoriaRead
 
 class GameCreate(BaseModel):
     game_name: str

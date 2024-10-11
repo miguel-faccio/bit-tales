@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from models.feedback import FeedbackDB
-from schemas.feedback import (
+from back.models.feedback import FeedbackDB
+from back.schemas.feedback import (
     FeedbackCreate,
     FeedbackRead,
     FeedbackReadList,

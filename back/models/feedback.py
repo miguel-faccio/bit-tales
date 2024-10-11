@@ -1,7 +1,7 @@
 from peewee import AutoField, CharField, ForeignKeyField, Model, TextField
 from enum import Enum
-from config.database import database
-from models.users import UsuarioDB
+from back.config.database import database
+from back.models.users import UsuarioDB
 
 class RatingEnum(Enum):
     ZERO = 0

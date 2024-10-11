@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from models.categoria import CategoriaDB
-from schemas.categoria import (
+from back.models.categoria import CategoriaDB
+from back.schemas.categoria import (
     CategoriaCreate,
     CategoriaRead,
     CategoriaReadList,

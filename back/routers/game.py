@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from models.game import GameDB
-from schemas.game import (
+from back.models.game import GameDB
+from back.schemas.game import (
     GameCreate,
     GameRead,
     GameReadList,
