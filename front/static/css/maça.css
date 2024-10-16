@@ -1,0 +1,316 @@
+#rules-modal {
+    display: none; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo escuro semi-transparente */
+    display: flex;
+    align-items: center;  
+    justify-content: center; 
+    z-index: 1000; 
+}
+
+#modal-content {
+    background-color: #f9f9f9; /* Fundo claro */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    width: 90%; /* Largura do modal */
+    max-width: 500px; /* Largura máxima reduzida */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra ao redor */
+    text-align: left; /* Alinhamento à esquerda */
+    position: relative; /* Permite o posicionamento absoluto do botão de fechar */
+}
+
+#modal-content h2 {
+    color: #4CAF50; /* Cor verde para o título */
+    font-family: 'Arial', sans-serif; /* Fonte profissional */
+    margin-bottom: 15px; /* Espaçamento abaixo do título */
+}
+
+#modal-content h3 {
+    color: #333; /* Cor escura para subtítulos */
+    margin-top: 15px; /* Espaçamento acima dos subtítulos */
+}
+
+#modal-content ul {
+    list-style-type: disc; /* Marcadores de lista */
+    padding-left: 20px; /* Indentação para a lista */
+}
+
+#modal-content li {
+    margin: 8px 0; /* Espaçamento entre os itens da lista */
+}
+
+#modal-content span {
+    cursor: pointer; 
+    font-size: 28px; /* Tamanho do botão de fechar */
+    color: #ff0000; /* Cor vermelha */
+    position: absolute; /* Posiciona no canto do modal */
+    top: 15px; /* Distância do topo */
+    right: 20px; /* Distância da direita */
+}
+
+#modal-content span:hover {
+    color: #ff5733; /* Cor ao passar o mouse */
+}
+
+#modal-content p {
+    line-height: 1.5; /* Melhora a legibilidade do texto */
+    font-family: 'Arial', sans-serif; /* Fonte profissional */
+    color: #555; /* Cor do texto */
+}
+
+
+/* Estilo para a Barra de Navegação */
+nav {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente */
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000; /* Garante que a nav fique acima dos outros elementos */
+}
+
+/* Estilo para os links da Nav */
+nav ul {
+    list-style-type: none; /* Remove marcadores da lista */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /* Exibe os itens na mesma linha */
+    margin: 0 15px; /* Espaçamento entre os itens */
+}
+
+nav ul li a {
+    color: #fff; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-size: 18px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    transition: color 0.3s; /* Transição suave para a cor */
+}
+
+/* Efeito hover nos links */
+nav ul li a:hover {
+    color: #ffdfba; /* Cor de destaque ao passar o mouse */
+}
+
+body {
+    margin: 0; /* Remove a margem padrão do navegador */
+    padding: 0; /* Remove o preenchimento padrão do navegador */
+    font-family: 'Poppins', sans-serif; /* Define a fonte utilizada na página */
+    background-image: url("../resources/images/fundo_jogos/fundooo.png"); /* Define a imagem de fundo */
+    min-height: 100vh; /* Altura mínima da viewport */
+    display: flex; /* Usa flexbox para organizar o conteúdo */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    background-size: cover; /* Faz a imagem de fundo cobrir toda a área */
+    background-position: center; /* Centraliza a imagem de fundo */
+    overflow: hidden; /* Oculta conteúdo que ultrapassa os limites */
+}
+
+/* Estilos de Tela Inicial e Game Over */
+#start-screen, #game-over-screen {
+    display: flex; /* Usa flexbox para organizar os itens */
+    flex-direction: column; /* Organiza os itens em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    height: 100vh; /* Altura total da viewport */
+    background: rgba(0, 0, 0, 0.85); /* Fundo preto semi-transparente */
+    color: #f1f1f1; /* Cor do texto */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Sombra no texto */
+    position: absolute; /* Permite posicionar em relação ao viewport */
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    width: 100vw; /* Largura total da viewport */
+    z-index: 10; /* Camada acima de outros elementos */
+    animation: fadeIn 1s ease-in-out; /* Animação ao aparecer */
+    transition: background 0.5s ease; /* Transição suave para o fundo */
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; } /* Começa invisível */
+    to { opacity: 1; } /* Termina visível */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Estilos de Títulos */
+h1 {
+    font-size: 4em; /* Tamanho grande do título */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+    animation: pulse 1.5s infinite; /* Animação de pulsação */
+    color: #ffdfba; /* Cor do título */
+}
+
+/* Estilos do Jogo */
+#game-wrapper {
+    display: flex; /* Usa flexbox para organizar o jogo */
+    justify-content: center; /* Centraliza os elementos */
+    gap: 30px; /* Espaçamento entre os elementos */
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo branco semi-transparente */
+    padding: 30px; /* Preenchimento ao redor do conteúdo */
+    border-radius: 20px; /* Bordas arredondadas */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4); /* Sombra ao redor do wrapper */
+    backdrop-filter: blur(15px); /* Desfoque do fundo */
+}
+
+#game-container {
+    position: relative; /* Permite posicionar elementos filhos */
+    max-width: 90vw; /* Largura máxima */
+    max-height: 60vh; /* Altura máxima */
+    min-width: 300px; /* Largura mínima */
+    min-height: 200px; /* Altura mínima */
+    background: rgba(255, 255, 255, 0.15); /* Fundo branco semi-transparente */
+    border-radius: 20px; /* Bordas arredondadas */
+    box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.2), 0 8px 25px rgba(0, 0, 0, 0.4); /* Sombra interna e externa */
+    overflow: hidden; /* Oculta conteúdo que ultrapassa */
+    transition: background 0.5s ease; /* Transição suave para mudanças de fundo */
+}
+
+/* Estilos do Jogador */
+.player {
+    position: absolute; /* Posiciona o jogador dentro do container */
+    width: 60px; /* Largura da imagem do jogador */
+    height: 60px; /* Altura da imagem do jogador */
+    background-image: url('../resources/images/elementos_graficos/cesta.png'); /* Imagem do jogador */
+    background-size: cover; /* Garante que a imagem cubra todo o elemento */
+    border-radius: 50%; /* Borda arredondada */
+    bottom: 10px; /* Distância da parte inferior */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Ajusta a posição para centralizar */
+    transition: left 0.1s, transform 0.2s ease-in-out; /* Transições suaves para movimentos */
+}
+
+/* Efeito hover para o jogador */
+.player:hover {
+    background: radial-gradient(circle, #2980b9, #1e6f94); /* Efeito ao passar o mouse (opcional) */
+}
+
+/* Estilos da Bola */
+.ball {
+    position: absolute; /* Permite que a posição da bola seja definida */
+    width: 40px; /* Largura da imagem da bola */
+    height: 40px; /* Altura da imagem da bola */
+    background-image: url('../resources/images/elementos_graficos/maça.png'); /* Imagem da bola */
+    background-size: cover; /* Garante que a imagem cubra todo o elemento */
+    transition: transform 0.3s ease; /* Transição suave para transformações */
+}
+
+/* Efeito hover para a bola */
+.ball:hover {
+    transform: scale(1.2); /* Aumenta o tamanho ao passar o mouse */
+}
+
+/* Estilos do Power-Up */
+.power-up {
+    position: absolute; /* Permite que a posição do power-up seja definida */
+    width: 40px; /* Largura da imagem do power-up */
+    height: 40px; /* Altura da imagem do power-up */
+    background-image: url('../resources/images/elementos_graficos/laranja.png'); /* Imagem do power-up */
+    background-size: cover; /* Garante que a imagem cubra todo o elemento */
+    border-radius: 50%; /* Borda arredondada */
+    transition: transform 0.3s ease; /* Transição suave para transformações */
+}
+
+/* Efeito hover para o power-up */
+.power-up:hover {
+    transform: scale(1.2); /* Aumenta o tamanho ao passar o mouse */
+}
+
+/* Estilos das Partículas */
+.particle {
+    position: absolute; /* Permite que a posição da partícula seja definida */
+    width: 10px; /* Largura da partícula */
+    height: 10px; /* Altura da partícula */
+    background: linear-gradient(45deg, #f1c40f, #e67e22); /* Gradiente de fundo */
+    border-radius: 50%; /* Borda arredondada */
+    animation: particleMove 0.6s ease-out forwards; /* Animação para o movimento da partícula */
+}
+
+@keyframes particleMove {
+    0% { opacity: 1; transform: translateY(0) scale(1); } /* Começa visível e no tamanho original */
+    100% { opacity: 0; transform: translateY(-50px) scale(0.5); } /* Desaparece enquanto se move para cima */
+}
+
+/* Estilos da Sidebar */
+#sidebar {
+    display: flex; /* Usa flexbox para organizar os itens */
+    flex-direction: column; /* Organiza os itens na coluna */
+    justify-content: space-between; /* Espaço igual entre os itens */
+    background: rgba(255, 255, 255, 0.2); /* Fundo branco semi-transparente */
+    border: 2px solid #fff; /* Borda branca */
+    padding: 20px; /* Preenchimento interno */
+    width: 220px; /* Largura fixa */
+    height: 400px; /* Altura fixa */
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra ao redor da sidebar */
+    backdrop-filter: blur(10px); /* Desfoque do fundo */
+    transition: box-shadow 0.3s ease, border 0.3s ease; /* Transições suaves para sombra e borda */
+}
+
+#sidebar:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4); /* Sombra mais intensa ao passar o mouse */
+    border-color: #f39c12; /* Cor da borda ao passar o mouse */
+}
+
+/* Estilos da Pontuação e Timer */
+#score-box {
+    font-size: 28px; /* Tamanho da fonte para o placar */
+    font-weight: bold; /* Deixa a fonte em negrito */
+    color: #2ecc71; /* Cor do texto do placar */
+    text-align: center; /* Centraliza o texto */
+}
+
+#timer {
+    font-size: 24px; /* Tamanho da fonte para o timer */
+    color: #e74c3c; /* Cor do texto do timer */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Estilos dos Controles */
+#controls {
+    display: flex; /* Usa flexbox para organizar os itens */
+    flex-direction: column; /* Organiza os itens na coluna */
+    gap: 10px; /* Espaço entre os itens */
+}
+
+/* Estilos dos Botões */
+button {
+    padding: 12px 20px; /* Preenchimento interno do botão */
+    font-size: 16px; /* Tamanho da fonte do botão */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    background: linear-gradient(135deg, #3498db, #2980b9); /* Gradiente de fundo do botão */
+    border: none; /* Remove borda padrão */
+    color: white; /* Cor do texto do botão */
+    border-radius: 8px; /* Bordas arredondadas */
+    transition: background 0.5s, transform 0.2s, box-shadow 0.3s; /* Transições suaves */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra ao redor do botão */
+}
+
+button:hover {
+    background: linear-gradient(135deg, #1e6f94, #2980b9); /* Cor de fundo ao passar o mouse */
+    transform: translateY(-4px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); /* Sombra mais intensa ao passar o mouse */
+}
+
+button:active {
+    transform: translateY(0); /* Reseta a posição ao clicar */
+}
+
+button:focus {
+    outline: none; /* Remove a borda de foco padrão */
+    box-shadow: 0 0 12px #3498db; /* Sombra ao redor do botão quando em foco */
+}
+

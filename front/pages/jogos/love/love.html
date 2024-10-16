@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste do Amor</title>
+    <link rel="icon" href="../../static/resources/images/elementos_graficos/sirkass.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url("../../../static/resources/images/fundo_jogos/love.jpg");
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            color: #333;
+            text-align: center;
+        }
+
+        nav {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+            border-radius: 10px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #BD1340;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #E82E6A;
+        }
+
+        .container-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            width: 90%;
+            max-width: 1000px;
+        }
+
+        .container {
+            width: 50%;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            z-index: 1;
+        }
+        
+        h1 {
+            margin-top: 0;
+            color: #BD1340;
+            font-size: 2.5em;
+        }
+
+        input[type="text"] {
+            background-color: #FF8EBE;
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border: 2px solid #e82e69;
+            border-radius: 10px;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.348);
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+            transition: transform 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #BD1340;
+            outline: none;
+        }
+
+        button {
+            padding: 15px 30px;
+            background-color: #BD1340;
+            box-shadow: 0 6px 8px rgba(189, 19, 64, 0.697);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #E82E6A;
+            transform: translateY(-2px);
+        }
+
+        .resultado-container {
+            width: 50%;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            text-align: left;
+            opacity: 0;
+            transform: translateX(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .resultado-container.mostrar {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .resultado-container h2 {
+            color: #BD1340;
+            margin-bottom: 10px;
+        }
+
+        .resultado-container p {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        /* Estilos do Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: auto;
+            padding: 30px;
+            border: 3px solid #BD1340;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 700px; /* Aumentando a largura máxima do modal */
+            text-align: left; /* Alinhamento à esquerda para o conteúdo do modal */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            display: flex; /* Usando flexbox para layout */
+            flex-direction: column; /* Direção das colunas */
+            align-items: flex-start; /* Alinhamento à esquerda */
+        }
+
+        .modal.show .modal-content {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .close {
+            color: #BD1340;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #e82e6a;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            display: flex; /* Usando flexbox para layout do corpo do modal */
+            align-items: center; /* Alinhamento vertical do conteúdo */
+        }
+
+        .modal-body img {
+            max-width: 150px; /* Limitar a largura da imagem */
+            margin-right: 20px; /* Espaço entre a imagem e o texto */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">Início</a>
+        <a href="#" id="openModal">Como Jogar</a>
+    </nav>
+
+    <div class="container-wrapper">
+        <div class="container">
+            <h1>Teste do Amor</h1>
+            <input type="text" id="nome1" placeholder="Seu Nome">
+            <input type="text" id="nome2" placeholder="Nome do Crush">
+            <button onclick="calcularCompatibilidade()">Calcular</button>
+        </div>
+
+        <div id="resultado-container" class="resultado-container">
+            <h2>Resultado:</h2>
+            <p id="texto-resultado"></p>
+            <p id="percentual-resultado"></p>
+        </div>
+    </div>
+
+    <!-- Modal de Introdução -->
+    <div id="introModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2 class="modal-title">Bem-vindo ao Teste do Amor!</h2>
+            <div class="modal-body">
+                <img src="../../../static/resources/images/ziggy/nerd.png" alt="Imagem do Teste do Amor">
+                <div>
+                    <p>Descubra o quão compatíveis você e seu crush são, digitando seus nomes abaixo.</p>
+                    <p>Vamos nos divertir e descobrir o amor!</p>
+                    <p><strong>Cientista:</strong> "O amor é como uma equação complexa, e estamos aqui para encontrar a solução juntos!"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Alerta -->
+    <div id="alertModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeAlertModal">&times;</span>
+            <h2>Alerta!</h2>
+            <p>Por favor, preencha ambos os nomes antes de calcular o Amor.</p>
+        </div>
+    </div>
+
+    <script>
+        // Função para abrir o modal ao clicar no link "Como Jogar"
+        document.getElementById("openModal").onclick = function() {
+            const modal = document.getElementById("introModal");
+            modal.style.display = "flex";
+            setTimeout(function() {
+                modal.classList.add("show");
+            }, 10);
+        }
+
+        // Fechar o modal quando clicar no "x"
+        document.getElementById("closeModal").onclick = function() {
+            const modal = document.getElementById("introModal");
+            modal.classList.remove("show");
+            setTimeout(function() {
+                modal.style.display = "none";
+            }, 400);
+        }
+
+        // Fechar o modal de alerta
+        document.getElementById("closeAlertModal").onclick = function() {
+            const alertModal = document.getElementById("alertModal");
+            alertModal.classList.remove("show");
+            setTimeout(function() {
+                alertModal.style.display = "none";
+            }, 400);
+        }
+
+        function calcularCompatibilidade() {
+            const nome1 = document.getElementById("nome1").value;
+            const nome2 = document.getElementById("nome2").value;
+
+            if (nome1 === "" || nome2 === "") {
+                const alertModal = document.getElementById("alertModal");
+                alertModal.style.display = "flex";
+                setTimeout(function() {
+                    alertModal.classList.add("show");
+                }, 10);
+                return;
+            }
+
+            const compatibilidade = Math.floor(Math.random() * 100) + 1; // Valor aleatório de 1 a 100
+            document.getElementById("texto-resultado").innerText = `A compatibilidade entre ${nome1} e ${nome2} é de:`;
+            document.getElementById("percentual-resultado").innerText = `${compatibilidade}%`;
+
+            const resultadoContainer = document.getElementById("resultado-container");
+            resultadoContainer.classList.add("mostrar");
+        }
+    </script>
+</body>
+</html>

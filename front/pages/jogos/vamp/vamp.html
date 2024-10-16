@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="../../../static/css/vamp.css">
+    <link rel="icon" href="../../../static/resources/images/elementos_graficos/sirkass.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegação -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+    <h1>wladyson the vampire</h1>
+    
+    <div class="container">
+        <div class="game-container">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        <div class="scoreboard">
+            <h2>Tabela de Pontuação</h2>
+            <div id="score">Pontuação: 0</div>
+            <h2>Nível de Dificuldade</h2>
+            <div class="difficulty-buttons">
+                <button id="easyButton" class="difficulty-button">Fácil</button>
+                <button id="mediumButton" class="difficulty-button active">Médio</button>
+                <button id="hardButton" class="difficulty-button">Difícil</button>
+            </div>
+            <div class="game-buttons">
+                <button id="startButton">Iniciar Jogo</button>
+                <button id="restartButton" style="display: none;">Recomeçar</button>
+                <button id="pauseButton" style="display: none;">Pausar</button>
+            </div>
+        </div>
+        
+    </div>
+    <img id="carImage" src="../../../static/resources/images/elementos_graficos/wladyson.png" style="display: none;" />
+
+    <!-- Modal de Game Over -->
+    <div id="gameOverModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Game Over!</h2>
+            <p>Pontuação Final: <span id="finalScore"></span></p>
+            <button id="restartFromGameOverButton">Recomeçar</button>
+            <span class="close-btn">&times;</span>
+        </div>
+    </div>
+
+    <script src="../../../static/js/vamp.js"></script>
+</body>
+</html>

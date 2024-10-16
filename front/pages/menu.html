@@ -43,7 +43,7 @@
             </li>
             <li>
                 <!-- Botão de logout -->
-                <a class="logout-button" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                <a class="logout-button" id="logout-button"><i class="fas fa-sign-out-alt"></i> Logout</a>
             </li>
         </ul>
     </nav>
@@ -54,7 +54,7 @@
 
         <div class="slide">
             <div class="book xadrezB">
-                <a class="xadrezbut">
+                <a class="xadrezbut" href="/xadrez">
                     <div class="box">J</div>
                     <div class="box">O</div>
                     <div class="box">G</div>
@@ -70,7 +70,7 @@
                 <div class="cover vamp">
 
                 </div>
-                <a class="vampire"><span>Jogar</span></a>
+                <a class="vampire" href="/wladygame"><span>Jogar</span></a>
             </div>
             <div class="book velhaB">
                 <button class="button">Jogar</button>
@@ -81,11 +81,11 @@
         </div>
         <div class="slide">
             <div class="book amorB">
-                <a class="amorbut" style="--i:rgba(255,85,227,0.61);--j:rgba(255,162,240,0.62);">
+                <a class="amorbut" href="/love" style="--i:rgba(255,85,227,0.61);--j:rgba(255,162,240,0.62);">
             <span class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path>
-</svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path>
+                        </svg>
             </span>
                     <span class="title">Jogar</span>
                 </a>
@@ -94,7 +94,7 @@
                 </div>
             </div>
             <div class="book spaceB">
-                <a class="ui-btn">
+                <a class="ui-btn" href="/nutblaster">
                     <span>Jogar</span>
                 </a>
                 <div class="cover space">
@@ -102,7 +102,7 @@
                 </div>
             </div>
             <div class="book sudokuB">
-                <button class="button">Jogar</button>
+                <a class="button" href="/sudoku">Jogar</a>
                 <div class="cover sudoku">
 
                 </div>
@@ -116,13 +116,13 @@
                 </div>
             </div>
             <div class="book tetrisB">
-                <a class="button" >Jogar</a>
+                <a class="button" href="/tetris">Jogar</a>
                 <div class="cover tetris">
 
                 </div>
             </div>
             <div class="book pirateB">
-                <button class="button">Jogar</button>
+                <a class="button" href="/pirata">Jogar</a>
                 <div class="cover pirate">
 
                 </div>
@@ -132,19 +132,19 @@
 
         <div class="slide">
             <div class="book pingB">
-                <button class="button">Jogar</button>
+                <a class="button" href="/pingpong">Jogar</a>
                 <div class="cover ping">
 
                 </div>
             </div>
             <div class="book macaB">
-                <button class="button">Jogar</button>
+                <a class="button" href="/maçã">Jogar</a>
                 <div class="cover maca">
 
                 </div>
             </div>
             <div class="book tesouroB">
-                <button class="button">Jogar</button>
+                <a class="button" href="/caça">Jogar</a>
                 <div class="cover tesouro">
                 </div>
             </div>
@@ -274,8 +274,17 @@
             }
         });
     });
+//     document.addEventListener('DOMContentLoaded', () => {
+//     const token = localStorage.getItem('access_token');
+//     if (!token) {
+//         // Se não houver token, redirecionar para a página de login
+//         window.location.href = "/";
+//     }
+// });
+
 </script>
 <script src="../static/js/livro.js"></script>
+<script src="../static/js/logout.js"></script>
 </body>
 
 </html>

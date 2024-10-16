@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Pirata da Bolinha</title>
+    <link rel="icon" href="../../../static/resources/images/elementos_graficos/sirkass.png" type="image/png">
+    <link rel="stylesheet" href="../../../static/css/pirata.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#" id="regrasLink">Como Jogar</a></li> <!-- Link para abrir modal de regras -->
+        </ul>
+    </nav>
+
+    <!-- Título do jogo -->
+    <h1>Guerra Pirata</h1>
+
+    <!-- Container principal que agrupa o canvas e a caixinha -->
+    <div class="main-container">
+        <div class="game-container">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+
+        <!-- Caixa de controle -->
+        <div class="control-panel">
+            <p>Escolha a Dificuldade:</p>
+            <button id="facilButton">Fácil</button>
+            <button id="medioButton">Médio</button>
+            <button id="dificilButton">Difícil</button>
+
+            <hr style="margin: 20px 0; border-color: #ffb142;">
+
+            <button id="startButton">Iniciar Jogo</button>
+            <button id="pauseButton">Pausar</button>
+            <button id="restartButton">Recomeçar</button>
+        </div>
+    </div>
+
+    <!-- Modal de Game Over -->
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content">
+            <h2>Game Over, Pirata!</h2>
+            <p>Você perdeu todas as vidas.</p>
+            <button id="restartGameButton">Jogar Novamente</button> <!-- Botão para reiniciar o jogo -->
+        </div>
+    </div>
+
+    <!-- Modal de Regras do Jogo -->
+    <div id="modalRegras" class="modal">
+        <div class="modal-content">
+            <span id="closeRegras" class="close-regras">&times;</span> <!-- Fechar o modal de regras -->
+            <h2>Como Jogar</h2>
+            <p>Bem-vindo ao Jogo Pirata da Bolinha! Aqui estão as regras e como jogar:</p>
+            <ul>
+                <li>Use as teclas de seta esquerda e direita para mover a raquete.</li>
+                <li>Seu objetivo é quebrar todos os tijolos acertando-os com a bolinha.</li>
+                <li>Você começa com 3 vidas. Se a bolinha passar pela raquete, você perde uma vida.</li>
+                <li>Escolha o nível de dificuldade antes de começar o jogo: Fácil, Médio ou Difícil.</li>
+                <li>Quebre todos os tijolos para ganhar!</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="../../../static/js/pirata.js"></script>
+</body>
+</html>

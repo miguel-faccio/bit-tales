@@ -62,7 +62,7 @@ function jump() {
   const character = document.getElementById('character');
   if (!isJumping) {
     isJumping = true;
-    let jumpHeight = 150;
+    let jumpHeight = 150; // Aumente a altura do salto
     let jumpSpeed = 15;
     let jumpInterval = setInterval(() => {
       let bottom = parseInt(window.getComputedStyle(character).bottom);
@@ -86,6 +86,7 @@ function jump() {
   }
 }
 
+
 function checkCollision() {
   const character = document.getElementById('character');
   const obstacles = document.querySelectorAll('.obstacle');
@@ -103,11 +104,12 @@ function checkCollision() {
     ) {
       isGameOver = true;
       clearInterval(scoreInterval);
-      stopObstacles(); // Para os obstáculos quando o jogo acaba
+      stopObstacles(); // Para a animação dos obstáculos
       showGameOver();
     }
   });
 }
+
 
 function stopObstacles() {
   const obstacles = document.querySelectorAll('.obstacle');

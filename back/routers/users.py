@@ -62,10 +62,6 @@ def atualizar_usuario(usuario_id: int, usuario_atualizado: UsuarioUpdate):
     # Verifica se a senha foi atualizada e a criptografa
     if usuario_atualizado.senha_usuario:
         usuario.senha_usuario = get_password_hash(usuario_atualizado.senha_usuario)
-    if usuario_atualizado.usuario_foto:
-        usuario.usuario_foto = usuario_atualizado.usuario_foto
-    if usuario_atualizado.data_criacao_user:
-        usuario.data_criacao_user = usuario_atualizado.data_criacao_user
     if usuario_atualizado.categoria_user:
         usuario.categoria_user = usuario_atualizado.categoria_user
 
