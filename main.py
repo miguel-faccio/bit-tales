@@ -12,15 +12,17 @@ app = FastAPI(title='BITTALES PAINEL ADMINISTRATIVO')
 # Configurações de arquivos estáticos
 static_dir = os.path.join(os.path.dirname(__file__), 'front/static')
 
+
 if not os.path.exists(static_dir):
     raise RuntimeError(f"Directory '{static_dir}' does not exist")
 
 app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
+
 # Adicionar CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # Adjust according to your requirements
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
