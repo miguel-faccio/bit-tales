@@ -7,6 +7,10 @@
 
     <title>{{ title }}</title>
     <style>
+        @font-face {
+            font-family: 'fairy';
+            src: url('../static/resources/fontes/fairydustb/FairyDustB.ttf');
+        }
         body, html {
             margin: 0;
             padding: 0;
@@ -44,29 +48,55 @@
         }
 
         .content img {
-            width: 200px; /* Ajuste o tamanho da imagem conforme necessário */
+            width: 300px; /* Ajuste o tamanho da imagem conforme necessário */
             margin-bottom: 20px;
         }
 
         h1 {
-            font-size: 2em;
+            font-family: "Agency FB";
+            font-size: 3em;
             margin: 10px 0;
+        }
+        h2{
+            margin-top: 0px;
+            font-family: "Agency FB";
+            font-size: 2em;
         }
 
         .explore-button {
             padding: 10px 20px;
             font-size: 1.2em;
             color: white;
-            background-color: #007BFF;
+            background-color: #8c3807;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: transform 0.2s, background-color 0.2s;
+            text-decoration: none;
         }
 
         .explore-button:hover {
             transform: scale(1.1);
-            background-color: #0056b3; /* Cor ao passar o mouse */
+            background-color: #D9843B; /* Cor ao passar o mouse */
+        }
+        span{
+            font-family: fairy;
+            font-size: 50px;
+            background: linear-gradient(270deg, #8b4513, #79bf34);
+            color: #8b4513;
+            background-size: 200%; /* Aumenta o tamanho do fundo para criar animação */
+            -webkit-background-clip: text; /* Para o efeito de clipping */
+            -webkit-text-fill-color: transparent; /* Torna a cor do texto transparente */
+            animation: gradienteAnim 6s linear infinite; /* Animação */
+
+        }
+        @keyframes gradienteAnim {
+            0% {
+        background-position: 0% 50%; /* Posição inicial */
+            }
+            100% {
+        background-position: 100% 50%; /* Posição final */
+            }
         }
     </style>
 </head>
@@ -74,8 +104,8 @@
 
 <div class="overlay">
     <div class="content">
-        <img src="../static/resources/images/" alt="Imagem Centralizada"> <!-- Insira sua imagem centralizada aqui -->
-        <h1>Bem vindo ao Bit Tales!</h1>
+        <img src="../static/resources/images/ziggy/joia.png" alt="Imagem Centralizada"> <!-- Insira sua imagem centralizada aqui -->
+        <h1>Bem vindo ao <span>Bit Tales!</span></h1>
         <h2>Uma biblioteca de jogos feita para todos!</h2>
         <a class="explore-button" href="/menu">Explorar!</a>
     </div>

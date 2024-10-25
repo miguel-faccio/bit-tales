@@ -243,3 +243,29 @@ body.dark {
         display: none;
     }
 }
+
+.bottom-left-decoration, .bottom-right-decoration {
+    position: fixed;
+    width: 50px; /* ajuste conforme o tamanho desejado */
+    height: 50px;
+    z-index: 1000; /* coloque um valor alto para sobrepor o conteúdo */
+    pointer-events: none; /* impede que a imagem interfira com a usabilidade da página */
+}
+
+/* Decoração no canto inferior esquerdo */
+.bottom-left-decoration {
+    bottom: 0;
+    left: 0;
+    background-image: url('../resources/images/ziggy/cutie.png'); /* Caminho da imagem */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Decoração no canto inferior direito */
+.bottom-right-decoration {
+    bottom: 0;
+    right: 0;
+    background-image: url('../resources/images/ziggy/cutie.png'); /* Caminho da imagem */
+    background-size: contain;
+    background-repeat: no-repeat;
+}

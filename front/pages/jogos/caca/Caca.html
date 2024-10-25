@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/static/css/caca_style.css">
+    <link rel="shortcut icon" type="image/png" href="../static/resources/images/elementos_graficos/sirkass.png">
+</head>
+<body>
+<nav id="navbar">
+    <div class="navbar-container">
+        <h1>Caça ao Tesouro</h1>
+        <ul class="navbar-links">
+            <li><a href="#home">Início</a></li>
+            <li><a href="#about">Sobre</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+<div id="infoBox">
+    <p id="distanceMessage">Clique para começar a procurar o tesouro!</p>
+    <div id="clickCountMessage">Cliques: 0</div>
+</div>
+<div style="text-align: center;">
+    <button id="startButton">Iniciar Jogo</button>
+    <button id="restartButton" style="display: none;">Reiniciar Jogo</button>
+</div>
+
+<div id="gameContainer"></div> <!-- O tabuleiro será gerado dinamicamente aqui -->
+</main>
+<script src="/static/js/caca_script.js"></script>
+</body>
+</html>

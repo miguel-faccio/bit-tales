@@ -10,32 +10,29 @@
 <body>
 <div class="ngc"></div>
 <nav>
-  <button>Start Game</button>
-  <button>Pause</button>
+  <button onclick="window.location.href='/menu'">Início</button>
+
 </nav>
 
 <div id="gameArea">
-
   <div id="character"></div>
   <div id="obstacleSmall"></div>
 </div>
 
 <div id="score">Score: 0</div>
 
+
+
+
 <!-- Game Over Modal -->
 <div class="modal">
   <div class="modal-content">
     <h2>Game Over!</h2>
-    <p>Your score: <span id="finalScore"></span></p>
-    <button id="restartGameButton" onclick="restartGame()">Restart Game</button>
+    <p>Sua pontuação: <span id="finalScore"></span></p>
+    <button id="restartGameButton" onclick="restartGame()">Reiniciar</button>
   </div>
 </div>
-
 
 <script src="../../../static/js/dog.js"></script>
 </body>
 </html>
-
-
-
-

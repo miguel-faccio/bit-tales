@@ -1,0 +1,261 @@
+/* Reset básico para tirar padding/margin */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilizar o fundo */
+body {
+    background-image: url('../resources/images/fundo_jogos/sudokuucerto.jpg'); /* Caminho da imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-attachment: fixed;
+}
+
+/* Centralizar o container com leve transparência */
+.sudoku-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Mais transparência */
+    border-radius: 15px;
+    padding: 20px;
+}
+
+/* Nome do jogo */
+#titulo-jogo {
+    font-size: 3rem;
+    color: #f2f2f2;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+}
+
+/* Estilo da grade de Sudoku */
+.sudoku-grid {
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.3); /* Leve transparência */
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/* Células da grade */
+.sudoku-grid td {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Estilo das bordas mais grossas para dividir os quadrantes 3x3 */
+.sudoku-grid td:nth-child(3),
+.sudoku-grid td:nth-child(6) {
+    border-right: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+.sudoku-grid tr:nth-child(3) td,
+.sudoku-grid tr:nth-child(6) td {
+    border-bottom: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Input do Sudoku */
+.sudoku-grid input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Arial', sans-serif;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease;
+}
+
+/* Animação de pulsação ao focar */
+.sudoku-grid input:focus {
+    border: 2px solid #ffcc66;
+    background-color: rgba(255, 204, 102, 0.3);
+    box-shadow: 0 0 8px rgba(255, 204, 102, 0.7);
+    transform: scale(1); /* Leve aumento ao clicar */
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* Animação de pulsação */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Número gerado automaticamente */
+.numero-gerado {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #ccc;
+    font-weight: bold;
+}
+
+/* Estilizar a barra de botões em uma linha */
+.botoes-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Animação do gradiente */
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Estilo do modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Escurece tudo ao redor */
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Animação suave para aparecer e sumir */
+}
+
+.modal.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Estilização da caixa modal */
+.modal-content {
+    background-color: #fefefe;
+    text-decoration: none;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: #333;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: modalFadeIn 1s ease; /* Animação suave para o modal */
+}
+
+/* Animação suave do modal ao aparecer */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-60%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+}
+
+/* Estilo do botão de fechar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo dos botões */
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 5px 10px !important; /* Ajuste de margem para espaçamento horizontal */
+    border: none;
+    background-color: #f8bbd0d2; /* Rosa suave */
+    color: white;
+    border-radius: 5px !important;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: none;
+}
+
+/* Efeito de elevação ao hover */
+button:hover {
+    background-color: #ec4079c5; /* Tom mais escuro de rosa ao passar o mouse */
+    transform: translateY(-2px);
+}
+
+/* Estilo específico para o botão Verificar Sudoku */
+#verificar-sudoku {
+    background-color: #ff6666;
+}
+
+#verificar-sudoku:hover {
+    background-color: #ff5050;
+}
+
+/* Estilo da navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background: linear-gradient(90deg, #7a436ed5, rgba(196, 125, 174, 0.8), rgba(110, 73, 95, 0.8));
+    background-size: 200% 200%;
+    animation: gradient-animation 5s ease infinite;
+}
+
+.nav-btns {
+    display: flex;
+    justify-content: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sudoku-grid td {
+        width: 40px;
+        height: 40px;
+    }
+
+    .sudoku-grid input {
+        font-size: 1.5rem;
+    }
+
+    .nav-btns {
+        flex-direction: row; /* Botões empilhados verticalmente */
+        align-items: center;
+    }
+
+    button {
+        margin: 5px 0; /* Ajuste das margens para botões empilhados */
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}

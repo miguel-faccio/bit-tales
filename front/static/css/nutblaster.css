@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+body {
+  text-align: center;
+  background-image: url('../resources/images/fundo_jogos/nutblaster.jpg')!important;
+  background-size: cover;
+
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+#gameCanvas {
+  border: 2px solid white;
+  background-color: #000000;
+  background-image: url('../resources/images/elementos_graficos/espaco.png');
+  filter: opacity(90%);
+}
+
+.game-title {
+  font-size: 48px; /* Tamanho grande */
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: 'Arial', sans-serif;
+}

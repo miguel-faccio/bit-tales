@@ -161,6 +161,7 @@ button {
   cursor: pointer; /* Muda o cursor para pointer */
   font-size: 16px; /* Tamanho da fonte */
   margin-top: 15px; /* Margem superior */
+  text-decoration: none;
 }
 
 button:hover {
